@@ -1,1 +1,8 @@
-Current Location: (0.00, 5.00, 0.00) Result : 1
+Current Location: (16.85, 25.00, -25.73) Result : 0
+Current Location: (20.11, 25.00, -19.72) Result : 0
+Current Location: (19.42, 25.00, -21.28) Result : 0
+Current Location: (18.63, 25.00, -22.80) Result : 605
+Current Location: (17.77, 25.00, -24.27) Result : 1056
+Current Location: (20.67, 25.00, -18.07) Result : 0
+Current Location: (36.51, 5.00, 13.83) Result : 0
+Current Location: (37.48, 5.00, 15.28) Result : 0
