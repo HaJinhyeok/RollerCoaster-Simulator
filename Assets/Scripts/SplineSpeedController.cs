@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.Splines;
-using Unity.Mathematics; 
+using Unity.Mathematics;
 
 public class SplineSpeedController : MonoBehaviour
 {
@@ -37,6 +37,7 @@ public class SplineSpeedController : MonoBehaviour
             splineContainer = GetComponent<SplineContainer>();
 
         totalDistance = splineContainer.Splines[0].GetLength();
+        Debug.Log(Quaternion.identity);
     }
 
     void Update()
@@ -55,10 +56,18 @@ public class SplineSpeedController : MonoBehaviour
         float3 up = splineContainer.EvaluateUpVector(currentT);
 
         Quaternion axisRemap = Quaternion.Inverse(Quaternion.LookRotation(GetAxisVector(forwardAxis), GetAxisVector(upAxis)));
-        Quaternion finalRotation = Quaternion.LookRotation((Vector3)tangent, (Vector3)up) * axisRemap;
+        Debug.Log(axisRemap.eulerAngles);
+        Debug.Log(axisRemap);
+        //Quaternion finalRotation = Quaternion.LookRotation((Vector3)tangent, (Vector3)up) * axisRemap;
+        Quaternion finalRotation = Quaternion.LookRotation((Vector3)tangent, (Vector3)up);
 
         transform.position = (Vector3)pos;
         transform.rotation = finalRotation;
+        if (currentT >= 1f)
+        {
+            elapsedTime = 0f;
+            currentT = 0f;
+        }
     }
 
     float GetCurrentSpeed(float time)
